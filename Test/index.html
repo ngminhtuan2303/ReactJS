@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="member"></div>
+
+    <!-- <script type="text/babel">
+        var Avatar = (props) => {
+            return(
+                <div className="avatar">
+                    <img src={props.avatar.path} alt="" />
+                </div>
+            )
+        };
+
+        function MemberInfo(props){
+            return(
+                <div className="info">
+                    <Avatar avatar={props.memberInfo} />
+                    <h2>{props.memberInfo.name}</h2>
+                    <p>Tuổi: {props.memberInfo.age}</p>
+                </div>
+            )
+        };
+
+        function Comment(props){
+            return(
+                <div className="comment">
+                    {props.text}
+                </div>
+            )
+        };
+
+        function Member(){
+            return(
+                <div className="member">
+                    
+                    <MemberInfo memberInfo={member.info} />
+                    <Comment text={member.text} />
+                </div>
+            )
+        };
+
+        const member = {
+            text: 'No comment',
+            info: {
+                path: 'logo192.png',
+                name: 'Nguyễn Minh Tuấn',
+                age: 23
+            }
+        }
+
+        ReactDOM.render(
+            <Member 
+                info={member.info}
+                text={member.text}
+            />,
+            document.getElementById('member')
+        );
+    </script> -->
+
+    <!-- <script type="text/babel">
+        class Member extends React.Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+            name: "Nguyễn Văn A",
+            age: 25
+            };
+        };
+
+        changeName = () => {
+            this.setState({
+            name: "Lê Thị B",
+            age: 27
+            })
+        };
+
+        render() {
+            return (
+            <div>
+                <h2>{this.state.name}</h2>
+                <p>Tuổi: {this.state.age}</p>
+                <button type="button" onClick={this.changeName}>Change name</button>
+            </div>
+            );
+        };
+        };
+
+        ReactDOM.render(
+        <Member />,
+        document.getElementById('member')
+        );
+    </script> -->
+
+    <script type="text/babel">
+        class Member extends React.Component {
+            constructor(props) {
+            super(props);
+            this.state = {
+                users: [
+                { name: "Bùi Văn Tèo", age: 25 },
+                { name: "Trần Văn An", age: 29 },
+                { name: "Nguyễn Thị Bưởi", age: 22 }
+                ],
+                job: "IT Communicator"
+            };
+            };
+
+            changeName = () => {
+            this.setState({
+                users: [
+                { name: "Bùi Văn Tý", age: 27 },
+                { name: "Trần Văn An", age: 29 },
+                { name: "Nguyễn Thị Bưởi", age: 22 }
+                ],
+                job: "Bridge System Engineer"
+            })
+            };
+
+            render() {
+            return (
+                <div>
+                <h2>{this.state.users[0].name}</h2>
+                <p>Tuổi: {this.state.users[0].age}</p>
+                <p>Nghề nghiệp: {this.state.job}</p>
+                <button type="button" onClick={this.changeName}>Change Data</button>
+                </div>
+            );
+            };
+        };
+
+        ReactDOM.render(
+            <Member />,
+            document.getElementById('member')
+        );
+        </script>
+
+  </body>
+</html>
